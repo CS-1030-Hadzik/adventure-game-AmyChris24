@@ -28,18 +28,22 @@ A faint path lies ahead, leading deeper into the unknown...
 '''
 print(starting_area)
 
-# Ask the player for their first decision
-decision = input("Do you wish to take the path? (yes or no): ").lower()
+# Start the game loop
+while True:
+    print("\nYou see two paths ahead:")
+    print("\t1. Take the left path into the dark woods.")
+    print("\t2. Take the right path toward the mountain pass.")
+    print("\t3. Stay where you are.")
 
+    decision = input("What will you do (1, 2, or 3)?: ")
 
-# invalid response
-while decision not in ["yes", "no"]:
-    print('Confused, you stand still, unsure of what to do. Please type "yes" or "no"')
-    # option for user to make new decision
-    decision = input("Do you wish to take the path? (yes or no): ").lower() 
-# Respond based on the player's decision
-if decision == 'yes':
-    print(f'Brave choice, {player_name}! You step on the path and venture forward')
-elif decision == 'no':
-    print(f'{player_name}, you decide to wait. Perhaps courage will find you later.')
-# 
+    if decision == "1":
+        print(f"{player_name}, you step into the dark woods. " 
+            "The trees whisper as you walk deeper.")
+    elif decision == "2":
+        print(f"{player_name}, you make your way towards the mountain pass, "
+            "feeling the cold wind against your face.")
+    elif decision == "3":
+        print("You stand still, listening to the distant sounds of the forest.")
+    else:
+        print("Invalid choice. Please choose 1, 2, or 3")
